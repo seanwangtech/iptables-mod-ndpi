@@ -8,15 +8,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=iptables-mod-ndpi
-PKG_RELEASE:=6
+PKG_RELEASE:=4.0
 PKG_VERSION:=1.$(PKG_RELEASE)
 
-PKG_SOURCE:=iptables-mod-ndpi-$(PKG_VERSION).tar.gz
-PKG_SOURCE_SUBDIR:=iptables-mod-ndpi-$(PKG_VERSION)
-PKG_SOURCE_URL:=https://github.com/ntop/nDPI/commits/1.6-stable
-PKG_SOURCE_VERSION:=a31b0a3354d4a6f62ea9c338ed6f890136f1d3e6
-PKG_SOURCE_PROTO:=git
-
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+PKG_SOURCE_URL:=http://opkg.baiyatech.com/repos/shs-project/
 PKG_FIXUP:=autoreconf
 
 include $(INCLUDE_DIR)/package.mk
@@ -37,11 +33,9 @@ define Package/iptables-mod-ndpi/description
 endef
 
 define Download/ndpi-netfilter
-  VERSION:=a36ef68a19ad7c518022fff326ef859688636a96
-  #VERSION:=81093ac2fd55be69e926d1208c97d898d8f9692e
-  #VERSION:=9bf95d159586d5c2bbf517dae80bfa4c3bcd8937
+  VERSION:=591e599642e701f1a8e15aaa2a126f806cf34304
   FILE:=ndpi-netfilter-$(PKG_VERSION).tar.gz
-  URL:=https://github.com/heil/ndpi-netfilter.git
+  URL:=https://github.com/ninglvfeihong/ndpi-netfilter.git
   PROTO:=git
   SUBDIR:=ndpi-netfilter
 endef
